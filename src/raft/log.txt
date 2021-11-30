@@ -1,0 +1,6 @@
+Test (2C): Figure 8 (unreliable) ...
+--- FAIL: TestFigure8Unreliable2C (48.07s)
+    config.go:477: one(5671) failed to reach agreement
+FAIL
+exit status 1
+FAIL	_/home/xxxrrtt/Desktop/mit-6.824/lab1/6.824/src/raft	48.078s

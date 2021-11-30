@@ -1,0 +1,450 @@
+Test (2B): no agreement if too many followers disconnect ...
+2020/08/30 13:28:21 1 leader return a start result index: 1, current term: 4, is leader: true
+2020/08/30 13:28:21 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[{Command:10 Term:4}] LeaderCommit:0} 
+2020/08/30 13:28:21 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[{Command:10 Term:4}] LeaderCommit:0} 
+2020/08/30 13:28:21 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[{Command:10 Term:4}] LeaderCommit:0} 
+2020/08/30 13:28:21 2 server log state is: [{10 4}]+
+2020/08/30 13:28:21 2 server commit state is: 0
+2020/08/30 13:28:21 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[{Command:10 Term:4}] LeaderCommit:0} 
+2020/08/30 13:28:21 0 server log state is: [{10 4}]+
+2020/08/30 13:28:21 0 server commit state is: 0
+2020/08/30 13:28:21 1 receive a AppendEntries from 2 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:21 4 server log state is: [{10 4}]+
+2020/08/30 13:28:21 4 server commit state is: 0
+2020/08/30 13:28:21 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:21 1 receive a AppendEntries from 4 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:21 3 server log state is: [{10 4}]+
+2020/08/30 13:28:21 3 server commit state is: 0
+2020/08/30 13:28:21 1 receive a AppendEntries from 3 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:21 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:21 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:21 4 server log state is: [{10 4}]+
+2020/08/30 13:28:21 4 server commit state is: 1
+2020/08/30 13:28:21 1 receive a AppendEntries from 4 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:21 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:21 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:21 0 server log state is: [{10 4}]+
+2020/08/30 13:28:21 0 server commit state is: 1
+2020/08/30 13:28:21 2 server log state is: [{10 4}]+
+2020/08/30 13:28:21 2 server commit state is: 1
+2020/08/30 13:28:21 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:21 3 server log state is: [{10 4}]+
+2020/08/30 13:28:21 3 server commit state is: 1
+2020/08/30 13:28:21 1 receive a AppendEntries from 2 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:21 1 receive a AppendEntries from 3 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:21 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:21 4 server log state is: [{10 4}]+
+2020/08/30 13:28:21 4 server commit state is: 1
+2020/08/30 13:28:21 1 receive a AppendEntries from 4 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:21 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:21 0 server log state is: [{10 4}]+
+2020/08/30 13:28:21 0 server commit state is: 1
+2020/08/30 13:28:21 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:21 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:21 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:21 2 server log state is: [{10 4}]+
+2020/08/30 13:28:21 2 server commit state is: 1
+2020/08/30 13:28:21 1 receive a AppendEntries from 2 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:21 3 server log state is: [{10 4}]+
+2020/08/30 13:28:21 3 server commit state is: 1
+2020/08/30 13:28:21 1 receive a AppendEntries from 3 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:21 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:21 4 server log state is: [{10 4}]+
+2020/08/30 13:28:21 4 server commit state is: 1
+2020/08/30 13:28:21 1 receive a AppendEntries from 4 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:21 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:21 0 server log state is: [{10 4}]+
+2020/08/30 13:28:21 0 server commit state is: 1
+2020/08/30 13:28:21 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:21 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:21 2 server log state is: [{10 4}]+
+2020/08/30 13:28:21 2 server commit state is: 1
+2020/08/30 13:28:21 1 receive a AppendEntries from 2 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:21 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:21 3 server log state is: [{10 4}]+
+2020/08/30 13:28:21 3 server commit state is: 1
+2020/08/30 13:28:21 1 receive a AppendEntries from 3 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:22 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:22 0 server log state is: [{10 4}]+
+2020/08/30 13:28:22 0 server commit state is: 1
+2020/08/30 13:28:22 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:22 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:22 2 server log state is: [{10 4}]+
+2020/08/30 13:28:22 2 server commit state is: 1
+2020/08/30 13:28:22 1 receive a AppendEntries from 2 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:22 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:22 3 server log state is: [{10 4}]+
+2020/08/30 13:28:22 3 server commit state is: 1
+2020/08/30 13:28:22 1 receive a AppendEntries from 3 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:22 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:22 4 server log state is: [{10 4}]+
+2020/08/30 13:28:22 4 server commit state is: 1
+2020/08/30 13:28:22 1 receive a AppendEntries from 4 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:22 1 leader return a start result index: 2, current term: 4, is leader: true
+2020/08/30 13:28:22 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 0 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:22 0 server commit state is: 1
+2020/08/30 13:28:22 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:22 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 0 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:22 0 server commit state is: 1
+2020/08/30 13:28:22 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:22 1 receive a AppendEntries from 3 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:22 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 0 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:22 0 server commit state is: 1
+2020/08/30 13:28:22 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:22 1 receive a AppendEntries from 4 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:22 1 receive a AppendEntries from 4 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:22 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 0 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:22 0 server commit state is: 1
+2020/08/30 13:28:22 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:22 1 receive a AppendEntries from 2 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:22 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:22 0 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:22 0 server commit state is: 1
+2020/08/30 13:28:22 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:22 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 1 receive a AppendEntries from 3 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:22 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:22 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 0 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:22 0 server commit state is: 1
+2020/08/30 13:28:22 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:22 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:23 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:23 0 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:23 0 server commit state is: 1
+2020/08/30 13:28:23 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:23 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:23 0 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:23 0 server commit state is: 1
+2020/08/30 13:28:23 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:23 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:23 0 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:23 0 server commit state is: 1
+2020/08/30 13:28:23 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:23 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 receive a AppendEntries from 3 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:23 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:23 0 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:23 0 server commit state is: 1
+2020/08/30 13:28:23 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:23 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:23 0 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:23 0 server commit state is: 1
+2020/08/30 13:28:23 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:23 1 receive a AppendEntries from 3 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:23 1 receive a AppendEntries from 2 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:23 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:23 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:23 0 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:23 0 server commit state is: 1
+2020/08/30 13:28:23 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:23 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:24 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:24 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:24 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:24 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:24 0 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:24 0 server commit state is: 1
+2020/08/30 13:28:24 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:24 1 send a AppendEntries to 4 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:24 1 send a AppendEntries to 2 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 4 
+ Reply: &{Term:9 Success:false} 
+2020/08/30 13:28:24 1 send a AppendEntries to 0 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:24 0 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:24 0 server commit state is: 1
+2020/08/30 13:28:24 1 receive a AppendEntries from 2 
+ Reply: &{Term:9 Success:false} 
+2020/08/30 13:28:24 1 send a AppendEntries to 3 
+ Args: &{Term:4 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 0 
+ Reply: &{Term:4 Success:true} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 3 
+ Reply: &{Term:9 Success:false} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 2 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 2 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 2 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 4 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 4 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:24 1 leader return a start result index: 3, current term: 10, is leader: true
+2020/08/30 13:28:24 1 leader return a start result index: 4, current term: 10, is leader: true
+2020/08/30 13:28:24 1 send a AppendEntries to 4 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[{Command:30 Term:10}] LeaderCommit:1} 
+2020/08/30 13:28:24 1 send a AppendEntries to 2 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[{Command:30 Term:10}] LeaderCommit:1} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 4 
+ Reply: &{Term:10 Success:false} 
+2020/08/30 13:28:24 1 send a AppendEntries to 0 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[{Command:30 Term:10}] LeaderCommit:1} 
+2020/08/30 13:28:24 0 server log state is: [{10 4} {20 4} {30 10}]+
+2020/08/30 13:28:24 0 server commit state is: 1
+2020/08/30 13:28:24 1 receive a AppendEntries from 2 
+ Reply: &{Term:10 Success:false} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 0 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:24 1 send a AppendEntries to 3 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[{Command:30 Term:10}] LeaderCommit:1} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 3 
+ Reply: &{Term:10 Success:false} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 2 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:24 1 send a AppendEntries to 0 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:3 PrevLogTerm:10 Entries:[{Command:1000 Term:10}] LeaderCommit:1} 
+2020/08/30 13:28:24 1 send a AppendEntries to 4 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:24 4 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:24 4 server commit state is: 1
+2020/08/30 13:28:24 1 receive a AppendEntries from 4 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:24 1 send a AppendEntries to 2 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:24 1 send a AppendEntries to 3 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:1 PrevLogTerm:4 Entries:[{Command:20 Term:4}] LeaderCommit:1} 
+2020/08/30 13:28:24 2 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:24 2 server commit state is: 1
+2020/08/30 13:28:24 3 server log state is: [{10 4} {20 4}]+
+2020/08/30 13:28:24 3 server commit state is: 1
+2020/08/30 13:28:24 1 receive a AppendEntries from 2 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:24 0 server log state is: [{10 4} {20 4} {30 10} {1000 10}]+
+2020/08/30 13:28:24 0 server commit state is: 1
+2020/08/30 13:28:24 1 receive a AppendEntries from 3 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 0 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 4 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:24 1 send a AppendEntries to 0 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:4 PrevLogTerm:10 Entries:[] LeaderCommit:1} 
+2020/08/30 13:28:24 1 send a AppendEntries to 4 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[{Command:30 Term:10}] LeaderCommit:1} 
+2020/08/30 13:28:24 0 server log state is: [{10 4} {20 4} {30 10} {1000 10}]+
+2020/08/30 13:28:24 0 server commit state is: 1
+2020/08/30 13:28:24 1 send a AppendEntries to 2 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[{Command:30 Term:10}] LeaderCommit:1} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 0 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:24 1 send a AppendEntries to 3 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:2 PrevLogTerm:4 Entries:[{Command:30 Term:10}] LeaderCommit:1} 
+2020/08/30 13:28:24 2 server log state is: [{10 4} {20 4} {30 10}]+
+2020/08/30 13:28:24 2 server commit state is: 1
+2020/08/30 13:28:24 3 server log state is: [{10 4} {20 4} {30 10}]+
+2020/08/30 13:28:24 3 server commit state is: 1
+2020/08/30 13:28:24 4 server log state is: [{10 4} {20 4} {30 10}]+
+2020/08/30 13:28:24 4 server commit state is: 1
+2020/08/30 13:28:24 1 receive a AppendEntries from 2 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 3 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:24 1 receive a AppendEntries from 4 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:25 1 receive a AppendEntries from 4 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:25 1 receive a AppendEntries from 4 
+ Reply: &{Term:0 Success:false} 
+2020/08/30 13:28:25 1 send a AppendEntries to 4 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:3 PrevLogTerm:10 Entries:[{Command:1000 Term:10}] LeaderCommit:3} 
+2020/08/30 13:28:25 1 send a AppendEntries to 2 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:3 PrevLogTerm:10 Entries:[{Command:1000 Term:10}] LeaderCommit:3} 
+2020/08/30 13:28:25 4 server log state is: [{10 4} {20 4} {30 10} {1000 10}]+
+2020/08/30 13:28:25 4 server commit state is: 3
+2020/08/30 13:28:25 1 receive a AppendEntries from 4 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:25 1 send a AppendEntries to 0 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:4 PrevLogTerm:10 Entries:[] LeaderCommit:3} 
+2020/08/30 13:28:25 2 server log state is: [{10 4} {20 4} {30 10} {1000 10}]+
+2020/08/30 13:28:25 2 server commit state is: 3
+2020/08/30 13:28:25 0 server log state is: [{10 4} {20 4} {30 10} {1000 10}]+
+2020/08/30 13:28:25 0 server commit state is: 3
+2020/08/30 13:28:25 1 receive a AppendEntries from 2 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:25 1 send a AppendEntries to 3 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:3 PrevLogTerm:10 Entries:[{Command:1000 Term:10}] LeaderCommit:3} 
+2020/08/30 13:28:25 1 receive a AppendEntries from 0 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:25 3 server log state is: [{10 4} {20 4} {30 10} {1000 10}]+
+2020/08/30 13:28:25 3 server commit state is: 3
+2020/08/30 13:28:25 1 receive a AppendEntries from 3 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:25 1 send a AppendEntries to 4 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:4 PrevLogTerm:10 Entries:[] LeaderCommit:4} 
+2020/08/30 13:28:25 1 send a AppendEntries to 2 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:4 PrevLogTerm:10 Entries:[] LeaderCommit:4} 
+2020/08/30 13:28:25 4 server log state is: [{10 4} {20 4} {30 10} {1000 10}]+
+2020/08/30 13:28:25 4 server commit state is: 4
+2020/08/30 13:28:25 2 server log state is: [{10 4} {20 4} {30 10} {1000 10}]+
+2020/08/30 13:28:25 2 server commit state is: 4
+2020/08/30 13:28:25 1 receive a AppendEntries from 4 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:25 1 send a AppendEntries to 0 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:4 PrevLogTerm:10 Entries:[] LeaderCommit:4} 
+2020/08/30 13:28:25 1 receive a AppendEntries from 2 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:25 1 send a AppendEntries to 3 
+ Args: &{Term:10 LeaderId:1 PrevLogIndex:4 PrevLogTerm:10 Entries:[] LeaderCommit:4} 
+2020/08/30 13:28:25 0 server log state is: [{10 4} {20 4} {30 10} {1000 10}]+
+2020/08/30 13:28:25 0 server commit state is: 4
+2020/08/30 13:28:25 3 server log state is: [{10 4} {20 4} {30 10} {1000 10}]+
+2020/08/30 13:28:25 3 server commit state is: 4
+2020/08/30 13:28:25 1 receive a AppendEntries from 0 
+ Reply: &{Term:10 Success:true} 
+2020/08/30 13:28:25 1 receive a AppendEntries from 3 
+ Reply: &{Term:10 Success:true} 
+  ... Passed --   5.5  5  228   41496    4
+PASS
+ok  	_/home/xxxrrtt/Desktop/mit-6.824/lab1/6.824/src/raft	5.455s
